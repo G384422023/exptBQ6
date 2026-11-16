@@ -1,0 +1,334 @@
+{
+  "questions": [
+    {
+      "id": "BQ3",
+      "startStep":3,
+      "endStep":4,
+      "text": "次のプログラムを最後まで実行したあとの状態を作図してください．",
+      "howToAnswer": ["arrow", "value", "structure"],
+      "feedback": ""
+    }
+  ],
+  "code": [
+    "public class exptBQ3{",
+    "    public static void main(String[] args){",
+    "        int[] xs = {7, 8, 9};",
+    "        int[] ys = {1, 2, 3, 4};",
+    "        int[] zs = ys;",
+    "    }",
+    "}",
+    ""
+  ],
+  "states": [
+    {
+      "eventIndex": 0,
+      "eventKind": "methodEntry",
+      "location": {
+        "className": "exptBQ3",
+        "methodName": "main",
+        "line": 3
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptBQ3",
+          "methodName": "main",
+          "locals": {},
+          "retval": null
+        }
+      ],
+      "heap": {},
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 1,
+      "eventKind": "step",
+      "location": {
+        "className": "exptBQ3",
+        "methodName": "main",
+        "line": 4
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptBQ3",
+          "methodName": "main",
+          "locals": {
+            "xs": {
+              "kind": "reference",
+              "type": "int[]",
+              "id": 50
+            }
+          },
+          "retval": null
+        }
+      ],
+      "heap": {
+        "50": {
+          "id": 50,
+          "type": "int[]",
+          "objectKind": "array",
+          "elements": [
+            {
+              "kind": "value",
+              "value": "7"
+            },
+            {
+              "kind": "value",
+              "value": "8"
+            },
+            {
+              "kind": "value",
+              "value": "9"
+            }
+          ]
+        }
+      },
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 2,
+      "eventKind": "step",
+      "location": {
+        "className": "exptBQ3",
+        "methodName": "main",
+        "line": 5
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptBQ3",
+          "methodName": "main",
+          "locals": {
+            "xs": {
+              "kind": "reference",
+              "type": "int[]",
+              "id": 50
+            },
+            "ys": {
+              "kind": "reference",
+              "type": "int[]",
+              "id": 52
+            }
+          },
+          "retval": null
+        }
+      ],
+      "heap": {
+        "50": {
+          "id": 50,
+          "type": "int[]",
+          "objectKind": "array",
+          "elements": [
+            {
+              "kind": "value",
+              "value": "7"
+            },
+            {
+              "kind": "value",
+              "value": "8"
+            },
+            {
+              "kind": "value",
+              "value": "9"
+            }
+          ]
+        },
+        "52": {
+          "id": 52,
+          "type": "int[]",
+          "objectKind": "array",
+          "elements": [
+            {
+              "kind": "value",
+              "value": "1"
+            },
+            {
+              "kind": "value",
+              "value": "2"
+            },
+            {
+              "kind": "value",
+              "value": "3"
+            },
+            {
+              "kind": "value",
+              "value": "4"
+            }
+          ]
+        }
+      },
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 3,
+      "eventKind": "step",
+      "location": {
+        "className": "exptBQ3",
+        "methodName": "main",
+        "line": 6
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptBQ3",
+          "methodName": "main",
+          "locals": {
+            "xs": {
+              "kind": "reference",
+              "type": "int[]",
+              "id": 50
+            },
+            "ys": {
+              "kind": "reference",
+              "type": "int[]",
+              "id": 52
+            },
+            "zs": {
+              "kind": "reference",
+              "type": "int[]",
+              "id": 52
+            }
+          },
+          "retval": null
+        }
+      ],
+      "heap": {
+        "50": {
+          "id": 50,
+          "type": "int[]",
+          "objectKind": "array",
+          "elements": [
+            {
+              "kind": "value",
+              "value": "7"
+            },
+            {
+              "kind": "value",
+              "value": "8"
+            },
+            {
+              "kind": "value",
+              "value": "9"
+            }
+          ]
+        },
+        "52": {
+          "id": 52,
+          "type": "int[]",
+          "objectKind": "array",
+          "elements": [
+            {
+              "kind": "value",
+              "value": "1"
+            },
+            {
+              "kind": "value",
+              "value": "2"
+            },
+            {
+              "kind": "value",
+              "value": "3"
+            },
+            {
+              "kind": "value",
+              "value": "4"
+            }
+          ]
+        }
+      },
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 6,
+      "eventKind": "methodExit",
+      "location": {
+        "className": "exptBQ3",
+        "methodName": "main",
+        "line": 6
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptBQ3",
+          "methodName": "main",
+          "locals": {
+            "xs": {
+              "kind": "reference",
+              "type": "int[]",
+              "id": 50
+            },
+            "ys": {
+              "kind": "reference",
+              "type": "int[]",
+              "id": 52
+            },
+            "zs": {
+              "kind": "reference",
+              "type": "int[]",
+              "id": 52
+            }
+          },
+          "retval": {
+            "kind": "void"
+          }
+        }
+      ],
+      "heap": {
+        "50": {
+          "id": 50,
+          "type": "int[]",
+          "objectKind": "array",
+          "elements": [
+            {
+              "kind": "value",
+              "value": "7"
+            },
+            {
+              "kind": "value",
+              "value": "8"
+            },
+            {
+              "kind": "value",
+              "value": "9"
+            }
+          ]
+        },
+        "52": {
+          "id": 52,
+          "type": "int[]",
+          "objectKind": "array",
+          "elements": [
+            {
+              "kind": "value",
+              "value": "1"
+            },
+            {
+              "kind": "value",
+              "value": "2"
+            },
+            {
+              "kind": "value",
+              "value": "3"
+            },
+            {
+              "kind": "value",
+              "value": "4"
+            }
+          ]
+        }
+      },
+      "stdout": "",
+      "exception": null
+    }
+  ]
+}

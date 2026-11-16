@@ -1,0 +1,994 @@
+{
+  "questions": [
+    {
+      "id": "AQ2",
+      "startStep":15 ,
+      "endStep":16 ,
+      "text": "次のプログラムを最後まで実行したあとの状態を作図してください．",
+      "howToAnswer": ["arrow", "value", "structure"],
+      "feedback": ""
+    }
+  ],
+  "code": [
+    "public class exptAQ2{",
+    "   public static void main(String[] args){",
+    "       Box b1 = new Box();",
+    "       Box b2 = new Box();",
+    "       b1.v = 4;",
+    "       b2.v = 9;",
+    "       b1.v = b2.v;",
+    "   }",
+    "}",
+    "",
+    "class Box{",
+    "   int v = 0;",
+    "   Box b = null;",
+    "}",
+    ""
+  ],
+  "states": [
+    {
+      "eventIndex": 0,
+      "eventKind": "methodEntry",
+      "location": {
+        "className": "exptAQ2",
+        "methodName": "main",
+        "line": 3
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptAQ2",
+          "methodName": "main",
+          "locals": {},
+          "retval": null
+        }
+      ],
+      "heap": {},
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 1,
+      "eventKind": "methodEntry",
+      "location": {
+        "className": "Box",
+        "methodName": "<init>",
+        "line": 11
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptAQ2",
+          "methodName": "main",
+          "locals": {},
+          "retval": null
+        },
+        {
+          "frameId": 1,
+          "depth": 2,
+          "className": "Box",
+          "methodName": "<init>",
+          "locals": {
+            "this": {
+              "kind": "reference",
+              "type": "Box",
+              "id": 51
+            }
+          },
+          "retval": null
+        }
+      ],
+      "heap": {
+        "51": {
+          "id": 51,
+          "type": "Box",
+          "objectKind": "object",
+          "fields": {
+            "v": {
+              "kind": "value",
+              "value": "0"
+            },
+            "b": {
+              "kind": "null"
+            }
+          }
+        }
+      },
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 2,
+      "eventKind": "step",
+      "location": {
+        "className": "Box",
+        "methodName": "<init>",
+        "line": 12
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptAQ2",
+          "methodName": "main",
+          "locals": {},
+          "retval": null
+        },
+        {
+          "frameId": 1,
+          "depth": 2,
+          "className": "Box",
+          "methodName": "<init>",
+          "locals": {
+            "this": {
+              "kind": "reference",
+              "type": "Box",
+              "id": 51
+            }
+          },
+          "retval": null
+        }
+      ],
+      "heap": {
+        "51": {
+          "id": 51,
+          "type": "Box",
+          "objectKind": "object",
+          "fields": {
+            "v": {
+              "kind": "value",
+              "value": "0"
+            },
+            "b": {
+              "kind": "null"
+            }
+          }
+        }
+      },
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 3,
+      "eventKind": "step",
+      "location": {
+        "className": "Box",
+        "methodName": "<init>",
+        "line": 13
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptAQ2",
+          "methodName": "main",
+          "locals": {},
+          "retval": null
+        },
+        {
+          "frameId": 1,
+          "depth": 2,
+          "className": "Box",
+          "methodName": "<init>",
+          "locals": {
+            "this": {
+              "kind": "reference",
+              "type": "Box",
+              "id": 51
+            }
+          },
+          "retval": null
+        }
+      ],
+      "heap": {
+        "51": {
+          "id": 51,
+          "type": "Box",
+          "objectKind": "object",
+          "fields": {
+            "v": {
+              "kind": "value",
+              "value": "0"
+            },
+            "b": {
+              "kind": "null"
+            }
+          }
+        }
+      },
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 6,
+      "eventKind": "methodExit",
+      "location": {
+        "className": "Box",
+        "methodName": "<init>",
+        "line": 13
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptAQ2",
+          "methodName": "main",
+          "locals": {},
+          "retval": null
+        },
+        {
+          "frameId": 1,
+          "depth": 2,
+          "className": "Box",
+          "methodName": "<init>",
+          "locals": {
+            "this": {
+              "kind": "reference",
+              "type": "Box",
+              "id": 51
+            }
+          },
+          "retval": {
+            "kind": "void"
+          }
+        }
+      ],
+      "heap": {
+        "51": {
+          "id": 51,
+          "type": "Box",
+          "objectKind": "object",
+          "fields": {
+            "v": {
+              "kind": "value",
+              "value": "0"
+            },
+            "b": {
+              "kind": "null"
+            }
+          }
+        }
+      },
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 5,
+      "eventKind": "step",
+      "location": {
+        "className": "exptAQ2",
+        "methodName": "main",
+        "line": 3
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptAQ2",
+          "methodName": "main",
+          "locals": {},
+          "retval": null
+        }
+      ],
+      "heap": {
+        "51": {
+          "id": 51,
+          "type": "Box",
+          "objectKind": "object",
+          "fields": {
+            "v": {
+              "kind": "value",
+              "value": "0"
+            },
+            "b": {
+              "kind": "null"
+            }
+          }
+        }
+      },
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 6,
+      "eventKind": "step",
+      "location": {
+        "className": "exptAQ2",
+        "methodName": "main",
+        "line": 4
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptAQ2",
+          "methodName": "main",
+          "locals": {
+            "b1": {
+              "kind": "reference",
+              "type": "Box",
+              "id": 51
+            }
+          },
+          "retval": null
+        }
+      ],
+      "heap": {
+        "51": {
+          "id": 51,
+          "type": "Box",
+          "objectKind": "object",
+          "fields": {
+            "v": {
+              "kind": "value",
+              "value": "0"
+            },
+            "b": {
+              "kind": "null"
+            }
+          }
+        }
+      },
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 7,
+      "eventKind": "methodEntry",
+      "location": {
+        "className": "Box",
+        "methodName": "<init>",
+        "line": 11
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptAQ2",
+          "methodName": "main",
+          "locals": {
+            "b1": {
+              "kind": "reference",
+              "type": "Box",
+              "id": 51
+            }
+          },
+          "retval": null
+        },
+        {
+          "frameId": 2,
+          "depth": 2,
+          "className": "Box",
+          "methodName": "<init>",
+          "locals": {
+            "this": {
+              "kind": "reference",
+              "type": "Box",
+              "id": 53
+            }
+          },
+          "retval": null
+        }
+      ],
+      "heap": {
+        "51": {
+          "id": 51,
+          "type": "Box",
+          "objectKind": "object",
+          "fields": {
+            "v": {
+              "kind": "value",
+              "value": "0"
+            },
+            "b": {
+              "kind": "null"
+            }
+          }
+        },
+        "53": {
+          "id": 53,
+          "type": "Box",
+          "objectKind": "object",
+          "fields": {
+            "v": {
+              "kind": "value",
+              "value": "0"
+            },
+            "b": {
+              "kind": "null"
+            }
+          }
+        }
+      },
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 8,
+      "eventKind": "step",
+      "location": {
+        "className": "Box",
+        "methodName": "<init>",
+        "line": 12
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptAQ2",
+          "methodName": "main",
+          "locals": {
+            "b1": {
+              "kind": "reference",
+              "type": "Box",
+              "id": 51
+            }
+          },
+          "retval": null
+        },
+        {
+          "frameId": 2,
+          "depth": 2,
+          "className": "Box",
+          "methodName": "<init>",
+          "locals": {
+            "this": {
+              "kind": "reference",
+              "type": "Box",
+              "id": 53
+            }
+          },
+          "retval": null
+        }
+      ],
+      "heap": {
+        "51": {
+          "id": 51,
+          "type": "Box",
+          "objectKind": "object",
+          "fields": {
+            "v": {
+              "kind": "value",
+              "value": "0"
+            },
+            "b": {
+              "kind": "null"
+            }
+          }
+        },
+        "53": {
+          "id": 53,
+          "type": "Box",
+          "objectKind": "object",
+          "fields": {
+            "v": {
+              "kind": "value",
+              "value": "0"
+            },
+            "b": {
+              "kind": "null"
+            }
+          }
+        }
+      },
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 9,
+      "eventKind": "step",
+      "location": {
+        "className": "Box",
+        "methodName": "<init>",
+        "line": 13
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptAQ2",
+          "methodName": "main",
+          "locals": {
+            "b1": {
+              "kind": "reference",
+              "type": "Box",
+              "id": 51
+            }
+          },
+          "retval": null
+        },
+        {
+          "frameId": 2,
+          "depth": 2,
+          "className": "Box",
+          "methodName": "<init>",
+          "locals": {
+            "this": {
+              "kind": "reference",
+              "type": "Box",
+              "id": 53
+            }
+          },
+          "retval": null
+        }
+      ],
+      "heap": {
+        "51": {
+          "id": 51,
+          "type": "Box",
+          "objectKind": "object",
+          "fields": {
+            "v": {
+              "kind": "value",
+              "value": "0"
+            },
+            "b": {
+              "kind": "null"
+            }
+          }
+        },
+        "53": {
+          "id": 53,
+          "type": "Box",
+          "objectKind": "object",
+          "fields": {
+            "v": {
+              "kind": "value",
+              "value": "0"
+            },
+            "b": {
+              "kind": "null"
+            }
+          }
+        }
+      },
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 12,
+      "eventKind": "methodExit",
+      "location": {
+        "className": "Box",
+        "methodName": "<init>",
+        "line": 13
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptAQ2",
+          "methodName": "main",
+          "locals": {
+            "b1": {
+              "kind": "reference",
+              "type": "Box",
+              "id": 51
+            }
+          },
+          "retval": null
+        },
+        {
+          "frameId": 2,
+          "depth": 2,
+          "className": "Box",
+          "methodName": "<init>",
+          "locals": {
+            "this": {
+              "kind": "reference",
+              "type": "Box",
+              "id": 53
+            }
+          },
+          "retval": {
+            "kind": "void"
+          }
+        }
+      ],
+      "heap": {
+        "51": {
+          "id": 51,
+          "type": "Box",
+          "objectKind": "object",
+          "fields": {
+            "v": {
+              "kind": "value",
+              "value": "0"
+            },
+            "b": {
+              "kind": "null"
+            }
+          }
+        },
+        "53": {
+          "id": 53,
+          "type": "Box",
+          "objectKind": "object",
+          "fields": {
+            "v": {
+              "kind": "value",
+              "value": "0"
+            },
+            "b": {
+              "kind": "null"
+            }
+          }
+        }
+      },
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 11,
+      "eventKind": "step",
+      "location": {
+        "className": "exptAQ2",
+        "methodName": "main",
+        "line": 4
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptAQ2",
+          "methodName": "main",
+          "locals": {
+            "b1": {
+              "kind": "reference",
+              "type": "Box",
+              "id": 51
+            }
+          },
+          "retval": null
+        }
+      ],
+      "heap": {
+        "51": {
+          "id": 51,
+          "type": "Box",
+          "objectKind": "object",
+          "fields": {
+            "v": {
+              "kind": "value",
+              "value": "0"
+            },
+            "b": {
+              "kind": "null"
+            }
+          }
+        },
+        "53": {
+          "id": 53,
+          "type": "Box",
+          "objectKind": "object",
+          "fields": {
+            "v": {
+              "kind": "value",
+              "value": "0"
+            },
+            "b": {
+              "kind": "null"
+            }
+          }
+        }
+      },
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 12,
+      "eventKind": "step",
+      "location": {
+        "className": "exptAQ2",
+        "methodName": "main",
+        "line": 5
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptAQ2",
+          "methodName": "main",
+          "locals": {
+            "b1": {
+              "kind": "reference",
+              "type": "Box",
+              "id": 51
+            },
+            "b2": {
+              "kind": "reference",
+              "type": "Box",
+              "id": 53
+            }
+          },
+          "retval": null
+        }
+      ],
+      "heap": {
+        "51": {
+          "id": 51,
+          "type": "Box",
+          "objectKind": "object",
+          "fields": {
+            "v": {
+              "kind": "value",
+              "value": "0"
+            },
+            "b": {
+              "kind": "null"
+            }
+          }
+        },
+        "53": {
+          "id": 53,
+          "type": "Box",
+          "objectKind": "object",
+          "fields": {
+            "v": {
+              "kind": "value",
+              "value": "0"
+            },
+            "b": {
+              "kind": "null"
+            }
+          }
+        }
+      },
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 13,
+      "eventKind": "step",
+      "location": {
+        "className": "exptAQ2",
+        "methodName": "main",
+        "line": 6
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptAQ2",
+          "methodName": "main",
+          "locals": {
+            "b1": {
+              "kind": "reference",
+              "type": "Box",
+              "id": 51
+            },
+            "b2": {
+              "kind": "reference",
+              "type": "Box",
+              "id": 53
+            }
+          },
+          "retval": null
+        }
+      ],
+      "heap": {
+        "51": {
+          "id": 51,
+          "type": "Box",
+          "objectKind": "object",
+          "fields": {
+            "v": {
+              "kind": "value",
+              "value": "4"
+            },
+            "b": {
+              "kind": "null"
+            }
+          }
+        },
+        "53": {
+          "id": 53,
+          "type": "Box",
+          "objectKind": "object",
+          "fields": {
+            "v": {
+              "kind": "value",
+              "value": "0"
+            },
+            "b": {
+              "kind": "null"
+            }
+          }
+        }
+      },
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 14,
+      "eventKind": "step",
+      "location": {
+        "className": "exptAQ2",
+        "methodName": "main",
+        "line": 7
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptAQ2",
+          "methodName": "main",
+          "locals": {
+            "b1": {
+              "kind": "reference",
+              "type": "Box",
+              "id": 51
+            },
+            "b2": {
+              "kind": "reference",
+              "type": "Box",
+              "id": 53
+            }
+          },
+          "retval": null
+        }
+      ],
+      "heap": {
+        "51": {
+          "id": 51,
+          "type": "Box",
+          "objectKind": "object",
+          "fields": {
+            "v": {
+              "kind": "value",
+              "value": "4"
+            },
+            "b": {
+              "kind": "null"
+            }
+          }
+        },
+        "53": {
+          "id": 53,
+          "type": "Box",
+          "objectKind": "object",
+          "fields": {
+            "v": {
+              "kind": "value",
+              "value": "9"
+            },
+            "b": {
+              "kind": "null"
+            }
+          }
+        }
+      },
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 15,
+      "eventKind": "step",
+      "location": {
+        "className": "exptAQ2",
+        "methodName": "main",
+        "line": 8
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptAQ2",
+          "methodName": "main",
+          "locals": {
+            "b1": {
+              "kind": "reference",
+              "type": "Box",
+              "id": 51
+            },
+            "b2": {
+              "kind": "reference",
+              "type": "Box",
+              "id": 53
+            }
+          },
+          "retval": null
+        }
+      ],
+      "heap": {
+        "51": {
+          "id": 51,
+          "type": "Box",
+          "objectKind": "object",
+          "fields": {
+            "v": {
+              "kind": "value",
+              "value": "9"
+            },
+            "b": {
+              "kind": "null"
+            }
+          }
+        },
+        "53": {
+          "id": 53,
+          "type": "Box",
+          "objectKind": "object",
+          "fields": {
+            "v": {
+              "kind": "value",
+              "value": "9"
+            },
+            "b": {
+              "kind": "null"
+            }
+          }
+        }
+      },
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 18,
+      "eventKind": "methodExit",
+      "location": {
+        "className": "exptAQ2",
+        "methodName": "main",
+        "line": 8
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptAQ2",
+          "methodName": "main",
+          "locals": {
+            "b1": {
+              "kind": "reference",
+              "type": "Box",
+              "id": 51
+            },
+            "b2": {
+              "kind": "reference",
+              "type": "Box",
+              "id": 53
+            }
+          },
+          "retval": {
+            "kind": "void"
+          }
+        }
+      ],
+      "heap": {
+        "51": {
+          "id": 51,
+          "type": "Box",
+          "objectKind": "object",
+          "fields": {
+            "v": {
+              "kind": "value",
+              "value": "9"
+            },
+            "b": {
+              "kind": "null"
+            }
+          }
+        },
+        "53": {
+          "id": 53,
+          "type": "Box",
+          "objectKind": "object",
+          "fields": {
+            "v": {
+              "kind": "value",
+              "value": "9"
+            },
+            "b": {
+              "kind": "null"
+            }
+          }
+        }
+      },
+      "stdout": "",
+      "exception": null
+    }
+  ]
+}

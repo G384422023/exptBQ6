@@ -1,0 +1,614 @@
+{
+  "questions": [
+    {
+      "id": "BQ5",
+      "startStep":3,
+      "endStep":10,
+      "text": "次のプログラムを最後まで実行したあとの状態を作図してください．",
+      "howToAnswer": ["arrow", "value", "structure"],
+      "feedback": ""
+    }
+  ],
+  "code": [
+    "public class exptBQ5{",
+    "    public static void main(String[] args){",
+    "        double u1 = 9.876;",
+    "        double u2 = 4.321;",
+    "        Size sz = new Size(u1, u2);",
+    "    }",
+    "}",
+    "",
+    "class Size{",
+    "    double w;",
+    "    double h;",
+    "",
+    "    Size(double w, double h){",
+    "        this.w = w;",
+    "        this.h = h;",
+    "    }",
+    "}",
+    ""
+  ],
+  "states": [
+    {
+      "eventIndex": 0,
+      "eventKind": "methodEntry",
+      "location": {
+        "className": "exptBQ5",
+        "methodName": "main",
+        "line": 3
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptBQ5",
+          "methodName": "main",
+          "locals": {},
+          "retval": null
+        }
+      ],
+      "heap": {},
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 1,
+      "eventKind": "step",
+      "location": {
+        "className": "exptBQ5",
+        "methodName": "main",
+        "line": 4
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptBQ5",
+          "methodName": "main",
+          "locals": {
+            "u1": {
+              "kind": "value",
+              "value": "9.876"
+            }
+          },
+          "retval": null
+        }
+      ],
+      "heap": {},
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 2,
+      "eventKind": "step",
+      "location": {
+        "className": "exptBQ5",
+        "methodName": "main",
+        "line": 5
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptBQ5",
+          "methodName": "main",
+          "locals": {
+            "u1": {
+              "kind": "value",
+              "value": "9.876"
+            },
+            "u2": {
+              "kind": "value",
+              "value": "4.321"
+            }
+          },
+          "retval": null
+        }
+      ],
+      "heap": {},
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 3,
+      "eventKind": "methodEntry",
+      "location": {
+        "className": "Size",
+        "methodName": "<init>",
+        "line": 13
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptBQ5",
+          "methodName": "main",
+          "locals": {
+            "u1": {
+              "kind": "value",
+              "value": "9.876"
+            },
+            "u2": {
+              "kind": "value",
+              "value": "4.321"
+            }
+          },
+          "retval": null
+        },
+        {
+          "frameId": 1,
+          "depth": 2,
+          "className": "Size",
+          "methodName": "<init>",
+          "locals": {
+            "w": {
+              "kind": "value",
+              "value": "9.876"
+            },
+            "h": {
+              "kind": "value",
+              "value": "4.321"
+            },
+            "this": {
+              "kind": "reference",
+              "type": "Size",
+              "id": 51
+            }
+          },
+          "retval": null
+        }
+      ],
+      "heap": {
+        "51": {
+          "id": 51,
+          "type": "Size",
+          "objectKind": "object",
+          "fields": {
+            "w": {
+              "kind": "value",
+              "value": "0.0"
+            },
+            "h": {
+              "kind": "value",
+              "value": "0.0"
+            }
+          }
+        }
+      },
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 4,
+      "eventKind": "step",
+      "location": {
+        "className": "Size",
+        "methodName": "<init>",
+        "line": 14
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptBQ5",
+          "methodName": "main",
+          "locals": {
+            "u1": {
+              "kind": "value",
+              "value": "9.876"
+            },
+            "u2": {
+              "kind": "value",
+              "value": "4.321"
+            }
+          },
+          "retval": null
+        },
+        {
+          "frameId": 1,
+          "depth": 2,
+          "className": "Size",
+          "methodName": "<init>",
+          "locals": {
+            "w": {
+              "kind": "value",
+              "value": "9.876"
+            },
+            "h": {
+              "kind": "value",
+              "value": "4.321"
+            },
+            "this": {
+              "kind": "reference",
+              "type": "Size",
+              "id": 51
+            }
+          },
+          "retval": null
+        }
+      ],
+      "heap": {
+        "51": {
+          "id": 51,
+          "type": "Size",
+          "objectKind": "object",
+          "fields": {
+            "w": {
+              "kind": "value",
+              "value": "0.0"
+            },
+            "h": {
+              "kind": "value",
+              "value": "0.0"
+            }
+          }
+        }
+      },
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 5,
+      "eventKind": "step",
+      "location": {
+        "className": "Size",
+        "methodName": "<init>",
+        "line": 15
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptBQ5",
+          "methodName": "main",
+          "locals": {
+            "u1": {
+              "kind": "value",
+              "value": "9.876"
+            },
+            "u2": {
+              "kind": "value",
+              "value": "4.321"
+            }
+          },
+          "retval": null
+        },
+        {
+          "frameId": 1,
+          "depth": 2,
+          "className": "Size",
+          "methodName": "<init>",
+          "locals": {
+            "w": {
+              "kind": "value",
+              "value": "9.876"
+            },
+            "h": {
+              "kind": "value",
+              "value": "4.321"
+            },
+            "this": {
+              "kind": "reference",
+              "type": "Size",
+              "id": 51
+            }
+          },
+          "retval": null
+        }
+      ],
+      "heap": {
+        "51": {
+          "id": 51,
+          "type": "Size",
+          "objectKind": "object",
+          "fields": {
+            "w": {
+              "kind": "value",
+              "value": "9.876"
+            },
+            "h": {
+              "kind": "value",
+              "value": "0.0"
+            }
+          }
+        }
+      },
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 6,
+      "eventKind": "step",
+      "location": {
+        "className": "Size",
+        "methodName": "<init>",
+        "line": 16
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptBQ5",
+          "methodName": "main",
+          "locals": {
+            "u1": {
+              "kind": "value",
+              "value": "9.876"
+            },
+            "u2": {
+              "kind": "value",
+              "value": "4.321"
+            }
+          },
+          "retval": null
+        },
+        {
+          "frameId": 1,
+          "depth": 2,
+          "className": "Size",
+          "methodName": "<init>",
+          "locals": {
+            "w": {
+              "kind": "value",
+              "value": "9.876"
+            },
+            "h": {
+              "kind": "value",
+              "value": "4.321"
+            },
+            "this": {
+              "kind": "reference",
+              "type": "Size",
+              "id": 51
+            }
+          },
+          "retval": null
+        }
+      ],
+      "heap": {
+        "51": {
+          "id": 51,
+          "type": "Size",
+          "objectKind": "object",
+          "fields": {
+            "w": {
+              "kind": "value",
+              "value": "9.876"
+            },
+            "h": {
+              "kind": "value",
+              "value": "4.321"
+            }
+          }
+        }
+      },
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 9,
+      "eventKind": "methodExit",
+      "location": {
+        "className": "Size",
+        "methodName": "<init>",
+        "line": 16
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptBQ5",
+          "methodName": "main",
+          "locals": {
+            "u1": {
+              "kind": "value",
+              "value": "9.876"
+            },
+            "u2": {
+              "kind": "value",
+              "value": "4.321"
+            }
+          },
+          "retval": null
+        },
+        {
+          "frameId": 1,
+          "depth": 2,
+          "className": "Size",
+          "methodName": "<init>",
+          "locals": {
+            "w": {
+              "kind": "value",
+              "value": "9.876"
+            },
+            "h": {
+              "kind": "value",
+              "value": "4.321"
+            },
+            "this": {
+              "kind": "reference",
+              "type": "Size",
+              "id": 51
+            }
+          },
+          "retval": {
+            "kind": "void"
+          }
+        }
+      ],
+      "heap": {
+        "51": {
+          "id": 51,
+          "type": "Size",
+          "objectKind": "object",
+          "fields": {
+            "w": {
+              "kind": "value",
+              "value": "9.876"
+            },
+            "h": {
+              "kind": "value",
+              "value": "4.321"
+            }
+          }
+        }
+      },
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 8,
+      "eventKind": "step",
+      "location": {
+        "className": "exptBQ5",
+        "methodName": "main",
+        "line": 5
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptBQ5",
+          "methodName": "main",
+          "locals": {
+            "u1": {
+              "kind": "value",
+              "value": "9.876"
+            },
+            "u2": {
+              "kind": "value",
+              "value": "4.321"
+            }
+          },
+          "retval": null
+        }
+      ],
+      "heap": {
+        "51": {
+          "id": 51,
+          "type": "Size",
+          "objectKind": "object",
+          "fields": {
+            "w": {
+              "kind": "value",
+              "value": "9.876"
+            },
+            "h": {
+              "kind": "value",
+              "value": "4.321"
+            }
+          }
+        }
+      },
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 9,
+      "eventKind": "step",
+      "location": {
+        "className": "exptBQ5",
+        "methodName": "main",
+        "line": 6
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptBQ5",
+          "methodName": "main",
+          "locals": {
+            "u1": {
+              "kind": "value",
+              "value": "9.876"
+            },
+            "u2": {
+              "kind": "value",
+              "value": "4.321"
+            },
+            "sz": {
+              "kind": "reference",
+              "type": "Size",
+              "id": 51
+            }
+          },
+          "retval": null
+        }
+      ],
+      "heap": {
+        "51": {
+          "id": 51,
+          "type": "Size",
+          "objectKind": "object",
+          "fields": {
+            "w": {
+              "kind": "value",
+              "value": "9.876"
+            },
+            "h": {
+              "kind": "value",
+              "value": "4.321"
+            }
+          }
+        }
+      },
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 12,
+      "eventKind": "methodExit",
+      "location": {
+        "className": "exptBQ5",
+        "methodName": "main",
+        "line": 6
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptBQ5",
+          "methodName": "main",
+          "locals": {
+            "u1": {
+              "kind": "value",
+              "value": "9.876"
+            },
+            "u2": {
+              "kind": "value",
+              "value": "4.321"
+            },
+            "sz": {
+              "kind": "reference",
+              "type": "Size",
+              "id": 51
+            }
+          },
+          "retval": {
+            "kind": "void"
+          }
+        }
+      ],
+      "heap": {
+        "51": {
+          "id": 51,
+          "type": "Size",
+          "objectKind": "object",
+          "fields": {
+            "w": {
+              "kind": "value",
+              "value": "9.876"
+            },
+            "h": {
+              "kind": "value",
+              "value": "4.321"
+            }
+          }
+        }
+      },
+      "stdout": "",
+      "exception": null
+    }
+  ]
+}

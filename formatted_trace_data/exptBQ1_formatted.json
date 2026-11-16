@@ -1,0 +1,168 @@
+{
+  "questions": [
+    {
+      "id": "BQ1",
+      "startStep": 3,
+      "endStep": 4,
+      "text": "次のプログラムを最後まで実行したあとの状態を作図してください．",
+      "howToAnswer": ["arrow", "value", "structure"],
+      "feedback": ""
+    }
+  ],
+  "code": [
+    "public class exptBQ1{",
+    "    public static void main(String[] args){",
+    "        int m = 3;",
+    "        int n = 4;",
+    "        m = m+2*n;",
+    "    }",
+    "}",
+    ""
+  ],
+  "states": [
+    {
+      "eventIndex": 0,
+      "eventKind": "methodEntry",
+      "location": {
+        "className": "exptBQ1",
+        "methodName": "main",
+        "line": 3
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptBQ1",
+          "methodName": "main",
+          "locals": {},
+          "retval": null
+        }
+      ],
+      "heap": {},
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 1,
+      "eventKind": "step",
+      "location": {
+        "className": "exptBQ1",
+        "methodName": "main",
+        "line": 4
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptBQ1",
+          "methodName": "main",
+          "locals": {
+            "m": {
+              "kind": "value",
+              "value": "3"
+            }
+          },
+          "retval": null
+        }
+      ],
+      "heap": {},
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 2,
+      "eventKind": "step",
+      "location": {
+        "className": "exptBQ1",
+        "methodName": "main",
+        "line": 5
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptBQ1",
+          "methodName": "main",
+          "locals": {
+            "m": {
+              "kind": "value",
+              "value": "3"
+            },
+            "n": {
+              "kind": "value",
+              "value": "4"
+            }
+          },
+          "retval": null
+        }
+      ],
+      "heap": {},
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 3,
+      "eventKind": "step",
+      "location": {
+        "className": "exptBQ1",
+        "methodName": "main",
+        "line": 6
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptBQ1",
+          "methodName": "main",
+          "locals": {
+            "m": {
+              "kind": "value",
+              "value": "11"
+            },
+            "n": {
+              "kind": "value",
+              "value": "4"
+            }
+          },
+          "retval": null
+        }
+      ],
+      "heap": {},
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 6,
+      "eventKind": "methodExit",
+      "location": {
+        "className": "exptBQ1",
+        "methodName": "main",
+        "line": 6
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptBQ1",
+          "methodName": "main",
+          "locals": {
+            "m": {
+              "kind": "value",
+              "value": "11"
+            },
+            "n": {
+              "kind": "value",
+              "value": "4"
+            }
+          },
+          "retval": {
+            "kind": "void"
+          }
+        }
+      ],
+      "heap": {},
+      "stdout": "",
+      "exception": null
+    }
+  ]
+}

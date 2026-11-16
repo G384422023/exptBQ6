@@ -1,0 +1,614 @@
+{
+  "questions": [
+    {
+      "id": "AQ5",
+      "startStep":3,
+      "endStep":10,
+      "text": "次のプログラムを最後まで実行したあとの状態を作図してください．",
+      "howToAnswer": ["arrow", "value", "structure"],
+      "feedback": ""
+    }
+  ],
+  "code": [
+    "public class exptAQ5{",
+    "    public static void main(String[] args){",
+    "        double t1 = 1.234;",
+    "        double t2 = 5.678;",
+    "        Point p = new Point(t1, t2);",
+    "    }",
+    "}",
+    "",
+    "class Point{",
+    "    double x;",
+    "    double y;",
+    "",
+    "    Point(double x, double y){",
+    "        this.x = x;",
+    "        this.y = y;",
+    "    }",
+    "}",
+    ""
+  ],
+  "states": [
+    {
+      "eventIndex": 0,
+      "eventKind": "methodEntry",
+      "location": {
+        "className": "exptAQ5",
+        "methodName": "main",
+        "line": 3
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptAQ5",
+          "methodName": "main",
+          "locals": {},
+          "retval": null
+        }
+      ],
+      "heap": {},
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 1,
+      "eventKind": "step",
+      "location": {
+        "className": "exptAQ5",
+        "methodName": "main",
+        "line": 4
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptAQ5",
+          "methodName": "main",
+          "locals": {
+            "t1": {
+              "kind": "value",
+              "value": "1.234"
+            }
+          },
+          "retval": null
+        }
+      ],
+      "heap": {},
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 2,
+      "eventKind": "step",
+      "location": {
+        "className": "exptAQ5",
+        "methodName": "main",
+        "line": 5
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptAQ5",
+          "methodName": "main",
+          "locals": {
+            "t1": {
+              "kind": "value",
+              "value": "1.234"
+            },
+            "t2": {
+              "kind": "value",
+              "value": "5.678"
+            }
+          },
+          "retval": null
+        }
+      ],
+      "heap": {},
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 3,
+      "eventKind": "methodEntry",
+      "location": {
+        "className": "Point",
+        "methodName": "<init>",
+        "line": 13
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptAQ5",
+          "methodName": "main",
+          "locals": {
+            "t1": {
+              "kind": "value",
+              "value": "1.234"
+            },
+            "t2": {
+              "kind": "value",
+              "value": "5.678"
+            }
+          },
+          "retval": null
+        },
+        {
+          "frameId": 1,
+          "depth": 2,
+          "className": "Point",
+          "methodName": "<init>",
+          "locals": {
+            "x": {
+              "kind": "value",
+              "value": "1.234"
+            },
+            "y": {
+              "kind": "value",
+              "value": "5.678"
+            },
+            "this": {
+              "kind": "reference",
+              "type": "Point",
+              "id": 51
+            }
+          },
+          "retval": null
+        }
+      ],
+      "heap": {
+        "51": {
+          "id": 51,
+          "type": "Point",
+          "objectKind": "object",
+          "fields": {
+            "x": {
+              "kind": "value",
+              "value": "0.0"
+            },
+            "y": {
+              "kind": "value",
+              "value": "0.0"
+            }
+          }
+        }
+      },
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 4,
+      "eventKind": "step",
+      "location": {
+        "className": "Point",
+        "methodName": "<init>",
+        "line": 14
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptAQ5",
+          "methodName": "main",
+          "locals": {
+            "t1": {
+              "kind": "value",
+              "value": "1.234"
+            },
+            "t2": {
+              "kind": "value",
+              "value": "5.678"
+            }
+          },
+          "retval": null
+        },
+        {
+          "frameId": 1,
+          "depth": 2,
+          "className": "Point",
+          "methodName": "<init>",
+          "locals": {
+            "x": {
+              "kind": "value",
+              "value": "1.234"
+            },
+            "y": {
+              "kind": "value",
+              "value": "5.678"
+            },
+            "this": {
+              "kind": "reference",
+              "type": "Point",
+              "id": 51
+            }
+          },
+          "retval": null
+        }
+      ],
+      "heap": {
+        "51": {
+          "id": 51,
+          "type": "Point",
+          "objectKind": "object",
+          "fields": {
+            "x": {
+              "kind": "value",
+              "value": "0.0"
+            },
+            "y": {
+              "kind": "value",
+              "value": "0.0"
+            }
+          }
+        }
+      },
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 5,
+      "eventKind": "step",
+      "location": {
+        "className": "Point",
+        "methodName": "<init>",
+        "line": 15
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptAQ5",
+          "methodName": "main",
+          "locals": {
+            "t1": {
+              "kind": "value",
+              "value": "1.234"
+            },
+            "t2": {
+              "kind": "value",
+              "value": "5.678"
+            }
+          },
+          "retval": null
+        },
+        {
+          "frameId": 1,
+          "depth": 2,
+          "className": "Point",
+          "methodName": "<init>",
+          "locals": {
+            "x": {
+              "kind": "value",
+              "value": "1.234"
+            },
+            "y": {
+              "kind": "value",
+              "value": "5.678"
+            },
+            "this": {
+              "kind": "reference",
+              "type": "Point",
+              "id": 51
+            }
+          },
+          "retval": null
+        }
+      ],
+      "heap": {
+        "51": {
+          "id": 51,
+          "type": "Point",
+          "objectKind": "object",
+          "fields": {
+            "x": {
+              "kind": "value",
+              "value": "1.234"
+            },
+            "y": {
+              "kind": "value",
+              "value": "0.0"
+            }
+          }
+        }
+      },
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 6,
+      "eventKind": "step",
+      "location": {
+        "className": "Point",
+        "methodName": "<init>",
+        "line": 16
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptAQ5",
+          "methodName": "main",
+          "locals": {
+            "t1": {
+              "kind": "value",
+              "value": "1.234"
+            },
+            "t2": {
+              "kind": "value",
+              "value": "5.678"
+            }
+          },
+          "retval": null
+        },
+        {
+          "frameId": 1,
+          "depth": 2,
+          "className": "Point",
+          "methodName": "<init>",
+          "locals": {
+            "x": {
+              "kind": "value",
+              "value": "1.234"
+            },
+            "y": {
+              "kind": "value",
+              "value": "5.678"
+            },
+            "this": {
+              "kind": "reference",
+              "type": "Point",
+              "id": 51
+            }
+          },
+          "retval": null
+        }
+      ],
+      "heap": {
+        "51": {
+          "id": 51,
+          "type": "Point",
+          "objectKind": "object",
+          "fields": {
+            "x": {
+              "kind": "value",
+              "value": "1.234"
+            },
+            "y": {
+              "kind": "value",
+              "value": "5.678"
+            }
+          }
+        }
+      },
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 9,
+      "eventKind": "methodExit",
+      "location": {
+        "className": "Point",
+        "methodName": "<init>",
+        "line": 16
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptAQ5",
+          "methodName": "main",
+          "locals": {
+            "t1": {
+              "kind": "value",
+              "value": "1.234"
+            },
+            "t2": {
+              "kind": "value",
+              "value": "5.678"
+            }
+          },
+          "retval": null
+        },
+        {
+          "frameId": 1,
+          "depth": 2,
+          "className": "Point",
+          "methodName": "<init>",
+          "locals": {
+            "x": {
+              "kind": "value",
+              "value": "1.234"
+            },
+            "y": {
+              "kind": "value",
+              "value": "5.678"
+            },
+            "this": {
+              "kind": "reference",
+              "type": "Point",
+              "id": 51
+            }
+          },
+          "retval": {
+            "kind": "void"
+          }
+        }
+      ],
+      "heap": {
+        "51": {
+          "id": 51,
+          "type": "Point",
+          "objectKind": "object",
+          "fields": {
+            "x": {
+              "kind": "value",
+              "value": "1.234"
+            },
+            "y": {
+              "kind": "value",
+              "value": "5.678"
+            }
+          }
+        }
+      },
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 8,
+      "eventKind": "step",
+      "location": {
+        "className": "exptAQ5",
+        "methodName": "main",
+        "line": 5
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptAQ5",
+          "methodName": "main",
+          "locals": {
+            "t1": {
+              "kind": "value",
+              "value": "1.234"
+            },
+            "t2": {
+              "kind": "value",
+              "value": "5.678"
+            }
+          },
+          "retval": null
+        }
+      ],
+      "heap": {
+        "51": {
+          "id": 51,
+          "type": "Point",
+          "objectKind": "object",
+          "fields": {
+            "x": {
+              "kind": "value",
+              "value": "1.234"
+            },
+            "y": {
+              "kind": "value",
+              "value": "5.678"
+            }
+          }
+        }
+      },
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 9,
+      "eventKind": "step",
+      "location": {
+        "className": "exptAQ5",
+        "methodName": "main",
+        "line": 6
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptAQ5",
+          "methodName": "main",
+          "locals": {
+            "t1": {
+              "kind": "value",
+              "value": "1.234"
+            },
+            "t2": {
+              "kind": "value",
+              "value": "5.678"
+            },
+            "p": {
+              "kind": "reference",
+              "type": "Point",
+              "id": 51
+            }
+          },
+          "retval": null
+        }
+      ],
+      "heap": {
+        "51": {
+          "id": 51,
+          "type": "Point",
+          "objectKind": "object",
+          "fields": {
+            "x": {
+              "kind": "value",
+              "value": "1.234"
+            },
+            "y": {
+              "kind": "value",
+              "value": "5.678"
+            }
+          }
+        }
+      },
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 12,
+      "eventKind": "methodExit",
+      "location": {
+        "className": "exptAQ5",
+        "methodName": "main",
+        "line": 6
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "exptAQ5",
+          "methodName": "main",
+          "locals": {
+            "t1": {
+              "kind": "value",
+              "value": "1.234"
+            },
+            "t2": {
+              "kind": "value",
+              "value": "5.678"
+            },
+            "p": {
+              "kind": "reference",
+              "type": "Point",
+              "id": 51
+            }
+          },
+          "retval": {
+            "kind": "void"
+          }
+        }
+      ],
+      "heap": {
+        "51": {
+          "id": 51,
+          "type": "Point",
+          "objectKind": "object",
+          "fields": {
+            "x": {
+              "kind": "value",
+              "value": "1.234"
+            },
+            "y": {
+              "kind": "value",
+              "value": "5.678"
+            }
+          }
+        }
+      },
+      "stdout": "",
+      "exception": null
+    }
+  ]
+}

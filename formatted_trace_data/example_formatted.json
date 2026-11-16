@@ -1,0 +1,242 @@
+{
+  "code": [
+    "public class example {",
+    "  public static void main(String[] args) {",
+    "    int[] as = {1, 2, 3};",
+    "    int x = 3;  //現在の状態",
+    "    as[0] = x;",
+    "} ",
+    "}",
+    ""
+  ],
+  "states": [
+    {
+      "eventIndex": 0,
+      "eventKind": "methodEntry",
+      "location": {
+        "className": "example",
+        "methodName": "main",
+        "line": 3
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "example",
+          "methodName": "main",
+          "locals": {},
+          "retval": null
+        }
+      ],
+      "heap": {},
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 1,
+      "eventKind": "step",
+      "location": {
+        "className": "example",
+        "methodName": "main",
+        "line": 4
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "example",
+          "methodName": "main",
+          "locals": {
+            "as": {
+              "kind": "reference",
+              "type": "int[]",
+              "id": 50
+            }
+          },
+          "retval": null
+        }
+      ],
+      "heap": {
+        "50": {
+          "id": 50,
+          "type": "int[]",
+          "objectKind": "array",
+          "elements": [
+            {
+              "kind": "value",
+              "value": "1"
+            },
+            {
+              "kind": "value",
+              "value": "2"
+            },
+            {
+              "kind": "value",
+              "value": "3"
+            }
+          ]
+        }
+      },
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 2,
+      "eventKind": "step",
+      "location": {
+        "className": "example",
+        "methodName": "main",
+        "line": 5
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "example",
+          "methodName": "main",
+          "locals": {
+            "as": {
+              "kind": "reference",
+              "type": "int[]",
+              "id": 50
+            },
+            "x": {
+              "kind": "value",
+              "value": "3"
+            }
+          },
+          "retval": null
+        }
+      ],
+      "heap": {
+        "50": {
+          "id": 50,
+          "type": "int[]",
+          "objectKind": "array",
+          "elements": [
+            {
+              "kind": "value",
+              "value": "1"
+            },
+            {
+              "kind": "value",
+              "value": "2"
+            },
+            {
+              "kind": "value",
+              "value": "3"
+            }
+          ]
+        }
+      },
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 3,
+      "eventKind": "step",
+      "location": {
+        "className": "example",
+        "methodName": "main",
+        "line": 6
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "example",
+          "methodName": "main",
+          "locals": {
+            "as": {
+              "kind": "reference",
+              "type": "int[]",
+              "id": 50
+            },
+            "x": {
+              "kind": "value",
+              "value": "3"
+            }
+          },
+          "retval": null
+        }
+      ],
+      "heap": {
+        "50": {
+          "id": 50,
+          "type": "int[]",
+          "objectKind": "array",
+          "elements": [
+            {
+              "kind": "value",
+              "value": "3"
+            },
+            {
+              "kind": "value",
+              "value": "2"
+            },
+            {
+              "kind": "value",
+              "value": "3"
+            }
+          ]
+        }
+      },
+      "stdout": "",
+      "exception": null
+    },
+    {
+      "eventIndex": 6,
+      "eventKind": "methodExit",
+      "location": {
+        "className": "example",
+        "methodName": "main",
+        "line": 6
+      },
+      "frames": [
+        {
+          "frameId": 0,
+          "depth": 1,
+          "className": "example",
+          "methodName": "main",
+          "locals": {
+            "as": {
+              "kind": "reference",
+              "type": "int[]",
+              "id": 50
+            },
+            "x": {
+              "kind": "value",
+              "value": "3"
+            }
+          },
+          "retval": {
+            "kind": "void"
+          }
+        }
+      ],
+      "heap": {
+        "50": {
+          "id": 50,
+          "type": "int[]",
+          "objectKind": "array",
+          "elements": [
+            {
+              "kind": "value",
+              "value": "3"
+            },
+            {
+              "kind": "value",
+              "value": "2"
+            },
+            {
+              "kind": "value",
+              "value": "3"
+            }
+          ]
+        }
+      },
+      "stdout": "",
+      "exception": null
+    }
+  ]
+}
