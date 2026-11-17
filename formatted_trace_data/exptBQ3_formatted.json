@@ -4,7 +4,7 @@
       "id": "BQ3",
       "startStep":3,
       "endStep":4,
-      "text": "次のプログラムを最後まで実行したあとの状態を作図してください．",
+      "text": "プログラムを最後まで実行したあとの状態を作図してください．",
       "howToAnswer": ["arrow", "value", "structure"],
       "feedback": ""
     }

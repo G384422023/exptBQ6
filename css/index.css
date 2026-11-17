@@ -196,3 +196,21 @@
 #jsav_data_container .jsavcanvas .jsavarray .jsavindex {
     border-color: #112d4d;
 }
+
+#answerControls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+#historyButtons,
+#answerButtons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#answerButtons {
+    margin-left: auto;
+}

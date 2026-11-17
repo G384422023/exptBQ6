@@ -1,4 +1,4 @@
-const traceFilePath = "./formatted_trace_data/exptBQ6_formatted.json";
+const traceFilePath = "../formatted_trace_data/exptAQ3_formatted.json";
 
 
 //トレースを返す関数
@@ -16,7 +16,7 @@ const experimentMode = true;
 
 //可視化図の色
 const VISUAL_COLOR =  "#112d4d";
-const ANSWER_COLOR = "#ad3131";
+const ANSWER_COLOR = "#af2e2e";
 
 class ExecutionVisualizer{
 
@@ -117,7 +117,7 @@ class ExecutionVisualizer{
     //実験用　解答時目画面をPNGで保存
     async saveAnswerScreenshot(question, PId){
         //撮影対象　画面全体
-        const target = document.getElementById("visualizer");
+        const target = document.querySelector("#jsav_data_container .jsavcanvas");
 
         if(!target || typeof html2canvas !== "function"){
             throw new Error("html2canvasが利用できません");
@@ -189,7 +189,7 @@ class ExecutionVisualizer{
         //既存のスタックフレーム
         for(const frame of this.answerState.frames ?? []){
             select.add(new Option(
-                `${frame.className}.${frame.methodName} (depth ${frame.depth})`,
+                `${frame.methodName} (depth ${frame.depth})`,
                 `frame:${frame.frameId}`
             ));
         }
@@ -650,6 +650,9 @@ class ExecutionVisualizer{
     }
     //解答開始直後の状態に戻す
     resetAnswer(){
+        if(!confirm("解答を最初の状態に戻しますか？")){
+            return;
+        }
         this.restoreAnswerState(0);
     }
 
@@ -1328,39 +1331,23 @@ class ExecutionVisualizer{
         //操作できることをわかるようにする
         $(element).css("cursor", "crosshair");
 
-        //終点にマウスを重ねたとき
-        $(element).on("mouseenter", () => {
-
-            //始点が選択されていなければ何もしない
-            if(this.selectedArrowSource === null){
-                return;
-            }
-
-            //始点自身は終点候補として強調しない
-            if(JSON.stringify(this.selectedArrowSource) === key){
-                return;
-            }
-
-            //配列要素は終点にできない
-            if(endpoint.kind === "arrayElement"){
-                return;
-            }
-
-            //終点を強調する
-            $(element).addClass("arrow-target-hover");
-        });
-
-        //終点からマウスが離れたとき
-        $(element).on("mouseleave", () => {
-
-            //強調表示を解除する
-            $(element).removeClass("arrow-target-hover");
-        });
-
         //クリックされた要素を矢印操作へわたす
         $(element).on("click", event =>{
             event.stopPropagation();
-            this.handleArrowClick(endpoint);
+
+            //配列要素を終点としてクリックした場合は配列全体を選択する
+            if(endpoint.kind === "arrayElement" &&
+                this.selectedArrowSource !== null &&
+                JSON.stringify(this.selectedArrowSource) !== key){
+
+                this.handleArrowClick({
+                    kind: "object",
+                    objectId: String(endpoint.objectId)
+                });
+
+            }else{
+                this.handleArrowClick(endpoint);
+            }
         });
     }
 
@@ -2313,7 +2300,11 @@ class ExecutionVisualizer{
     }
 
     clearDataStructures(){
-        //前回描画したJSAVオブジェクトを順番に非表示にする(後で削除するように変更する)
+        //前回の描画につけた視点の強調表示を解除する
+        for(const endpoint of this.arrowEndpoints.values()){
+            endpoint.element.css("outline", "");
+        }
+        //前回描画したJSAVオブジェクトを順番に非表示にする
         for(const renderedObject of this.renderedDataStructures){
             //前回の描画を非表示にする
             renderedObject.hide();
@@ -2712,7 +2703,7 @@ class ExecutionVisualizer{
         //JSAVのarrayを作成
         const jsavArray = this.dataAv.ds.array(values, {
             left: x,
-            top: y+30,
+            top: y+10,
             center: false,
             indexed: true
         });
@@ -2756,10 +2747,81 @@ class ExecutionVisualizer{
             objectId: String(heapObject.id)
         };
 
-        //配列の型名，IDのラベルをクリックできるようにする
+        //配列全体をクリックできるようにする
         this.registerArrowEndpoint(
-            arrayLabel.element, endpoint, jsavArray
+            arrayLabel.element.add(jsavArray.element), endpoint, jsavArray
         );
+
+        //終点選択時は配列全体，それ以外は要素ごとに強調する
+        if(this.activeQuestion !== null && ["arrow", "value"].includes(this.editMode)){
+            const arrayTargets = arrayLabel.element.add(jsavArray.element);
+            const arrayBorders = jsavArray.element.find(".jsavindex");
+            const arrayValues = jsavArray.element.find(".jsavvalue");
+
+            //マウスオーバー時の強調を解除する
+            const resetArrayHover = () => {
+                arrayLabel.element.css("font-weight", "");
+                arrayBorders.css("box-shadow", "");
+                arrayValues.css("font-weight", "");
+            };
+
+            //配列全体を強調する
+            const highlightArray = () => {
+                arrayLabel.element.css("font-weight", "600");
+                arrayBorders.css("box-shadow", `inset 0 0 0 1px ${arrayColor}`);
+                arrayValues.css("font-weight", "600");
+            };
+
+            //矢印モードでは配列ラベルに重ねたときも全体を強調する
+            arrayLabel.element.on("mouseenter", () => {
+                if(this.editMode === "arrow"){
+                    highlightArray();
+                }
+            });
+
+            //始点未選択時，ラベルから要素に移れば要素ごとの強調に戻す
+            arrayLabel.element.on("mouseleave", () => {
+                if(this.selectedArrowSource === null){
+                    resetArrayHover();
+                }
+            });
+
+            arrayBorders.on("mouseenter", event => {
+                if(this.editMode === "arrow" && this.selectedArrowSource !== null){
+                    //配列要素を始点に選んだ直後の移動にも対応
+                    highlightArray();
+                }else{
+                    //始点選択時・値変更時はマウスを重ねた要素だけ強調する
+                    const border = $(event.currentTarget);
+                    border.css("box-shadow", `inset 0 0 0 1px ${arrayColor}`);
+                    border.find(".jsavvalue").css("font-weight", "600");
+                }
+            });
+
+            arrayBorders.on("mouseleave", event => {
+                //要素単位の強調だけを解除する
+                if(this.editMode === "arrow" && this.selectedArrowSource !== null){
+                    return;
+                }
+
+                const border = $(event.currentTarget);
+                border.css("box-shadow", "");
+                border.find(".jsavvalue").css("font-weight", "");
+            });
+
+            arrayTargets.on("mouseleave", event => {
+                //ラベルと配列の間を移動しただけなら解除しない
+                if(arrayTargets.is(event.relatedTarget) ||
+                arrayTargets.has(event.relatedTarget).length){
+                    return;
+                }
+
+                resetArrayHover();
+            });
+
+            //配列要素を始点に選択した場合も強調を解除する
+            arrayTargets.on("mousedown", resetArrayHover);
+        }
 
         //値が参照値の時，参照関係を保存
         heapObject.elements.forEach((value, index) =>{
@@ -2909,19 +2971,32 @@ class ExecutionVisualizer{
             objectId: String(heapObject.id)
         };
 
-        //オブジェクト名をクリックできるようにする
+        //クラス名と外枠を同じ矢印選択対象にする
+        const objectTargets = objectLabel.element.add(objectBox.rObj.node);
         this.registerArrowEndpoint(
-            objectLabel.element,
+            objectTargets,
             endpoint,
             objectBox
         );
 
-        //オブジェクトの外枠もクリックできるようにする
-        this.registerArrowEndpoint(
-            $(objectBox.rObj.node),
-            endpoint,
-            objectBox
-        );
+        //矢印モードでは，どちらにマウスを重ねても両方を強調する
+        if(this.activeQuestion !== null && this.editMode === "arrow"){
+            const resetObjectHover = () => {
+                objectBox.rObj.attr({"stroke-width": 2});
+                objectLabel.element.css("font-weight", "");
+            };
+
+            objectTargets.on("mouseenter", () => {
+                objectBox.rObj.attr({"stroke-width": 3});
+                objectLabel.element.css("font-weight", "600");
+            });
+
+            objectTargets.on("mouseleave", resetObjectHover);
+
+            //クリックで始点に選んだ際のマウスオーバー強調を解除する
+            objectTargets.on("click", resetObjectHover);
+        }
+
 
         //クラスインスタンスを削除できるようにする
         this.registerDeleteTarget(
@@ -3041,6 +3116,29 @@ class ExecutionVisualizer{
             objectId: String(objectId),
             fieldName: fieldName
         };
+
+        //矢印モードではフィールドの値の部分だけを強調する
+        if(this.activeQuestion !== null && ["arrow", "value"].includes(this.editMode)){
+            //マウスオーバー時の強調を解除する
+            const resetFieldHover = () => {
+                valueLabel.element.css({
+                    "font-weight": "",
+                    "box-shadow": ""
+                });
+            };
+
+            valueLabel.element.on("mouseenter", () => {
+                valueLabel.element.css({
+                    "font-weight": "600",
+                    "box-shadow": `0 0 0 1px ${fieldColor}`
+                });
+            });
+
+            valueLabel.element.on("mouseleave", resetFieldHover);
+
+            //フィールドを選択した場合も強調を解除する
+            valueLabel.element.on("mousedown", resetFieldHover);
+        }
 
         //矢印操作の対象として登録
         this.registerArrowEndpoint(
@@ -3296,6 +3394,24 @@ class ExecutionVisualizer{
             name: entry.name,
             isReturn: entry.isReturn
         };
+        
+        //マウスオーバーで値を強調する
+        if(this.activeQuestion !== null && ["arrow", "value"].includes(this.editMode)){
+            valueLabel.element.on("mouseenter", () => {
+
+                 valueLabel.element.css({
+                        "font-weight": "600",
+                        "box-shadow": `0 0 0 1px ${variableColor}`
+                    });
+                });
+
+                valueLabel.element.on("mouseleave", () => {
+                    valueLabel.element.css({
+                        "font-weight": "",
+                        "box-shadow": ""
+                    });
+                });
+        }
 
         //矢印操作の対象として登録
         this.registerArrowEndpoint(
