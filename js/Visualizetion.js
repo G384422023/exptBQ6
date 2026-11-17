@@ -1,4 +1,4 @@
-const traceFilePath = "../formatted_trace_data/exptAQ3_formatted.json";
+const traceFilePath = "./formatted_trace_data/exptBQ6_formatted.json";
 
 
 //トレースを返す関数
